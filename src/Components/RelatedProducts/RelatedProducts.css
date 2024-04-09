@@ -1,0 +1,36 @@
+.relatedproducts {
+  text-align: center;
+  padding: 20px;
+}
+
+.relatedproducts h1 {
+  margin-bottom: 20px;
+}
+
+.relatedproducts-item {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  gap: 20px;
+}
+
+.item {
+  flex: 1 1 22%; /* Each item will try to take roughly a quarter of the container's width */
+  max-width: 22%; /* Ensuring that the item doesn't grow beyond this percentage */
+  min-width: 250px; /* Minimum width to ensure content visibility */
+}
+
+/* Adjustments for smaller screens */
+@media (max-width: 1024px) {
+  .item {
+    flex-basis: 45%; /* On medium screens, two items per row */
+    max-width: 45%;
+  }
+}
+
+@media (max-width: 768px) {
+  .item {
+    flex-basis: 90%; /* On small screens, one item per row */
+    max-width: 90%;
+  }
+}

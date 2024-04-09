@@ -1,0 +1,136 @@
+/* 基本样式 */
+.productdisplay {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 20px;
+    border: 1px solid #eee;
+    background-color: #fff;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+  
+  .productdisplay-left,
+  .productdisplay-right {
+    padding: 20px;
+  }
+  
+  /* 左侧图片列表 */
+  .productdisplay-img-list {
+    display: flex;
+    overflow-x: auto;
+    margin-bottom: 10px;
+    gap: 10px;
+  }
+  
+  .productdisplay-img-list img {
+    flex: 0 0 auto;
+    max-width: 60px;
+    max-height: 60px;
+    object-fit: cover;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  
+  /* 主图片样式 */
+  .productdisplay-img {
+    margin-bottom: 20px;
+  }
+  
+  .productdisplay-main-img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 4px;
+  }
+  
+  /* 右侧详情样式 */
+  .productdisplay-right {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .productdisplay-right h1 {
+    font-size: 2em;
+    color: #333;
+    margin-bottom: 10px;
+  }
+  
+  /* 价格样式 */
+  .productdisplay-right-prices {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 20px;
+  }
+  
+  .productdisplay-right-price-old {
+    font-size: 1.2em;
+    color: #777;
+    text-decoration: line-through;
+  }
+  
+  .productdisplay-right-price-new {
+    font-size: 1.5em;
+    color: #E44D26;
+    font-weight: bold;
+  }
+  
+  /* 描述样式 */
+  .productdisplay-right-description {
+    font-size: 1em;
+    color: #666;
+    margin-bottom: 20px;
+  }
+  
+  /* 按钮样式 */
+  
+  
+  button:hover {
+    background-color: #4cae4c;
+  }
+  
+  /* 响应式媒体查询 */
+  @media (max-width: 1024px) {
+    .productdisplay {
+      flex-direction: column;
+    }
+  
+    .productdisplay-left,
+    .productdisplay-right {
+      width: 100%;
+    }
+  
+    .productdisplay-img-list img {
+      max-width: 50px;
+      max-height: 50px;
+    }
+  }
+  
+  @media (max-width: 768px) {
+    .productdisplay-right h1 {
+      font-size: 1.8em;
+    }
+  
+    .productdisplay-right-prices {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+  
+    .productdisplay-right-price-old {
+      margin-bottom: 5px;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .productdisplay-right-description,
+    .productdisplay-right-prices,
+    button {
+      width: 100%;
+    }
+  
+    button {
+      padding: 10px;
+    }
+  }
+  

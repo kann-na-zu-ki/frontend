@@ -9,7 +9,7 @@ let data_product = [
         name:'Coco Charcoal',
         category:'cococharcoal',
         image:p1_img,
-        new_price:0.00,
+        new_price:45.00,
         old_price:50.00,
     },
     {
@@ -17,7 +17,7 @@ let data_product = [
         name:'Coconut',
         category:'coconut',
         image:p2_img,
-        new_price:0.00,
+        new_price:45.00,
         old_price:50.00,
     },
     {
@@ -25,7 +25,7 @@ let data_product = [
         name:'Charcoal',
         category:'charcoal',
         image:p3_img,
-        new_price:0.00,
+        new_price:45.00,
         old_price:50.00,
     },
     {
@@ -33,7 +33,7 @@ let data_product = [
         name:'Lego',
         category:'lego',
         image:p4_img,
-        new_price:0.00,
+        new_price:45.00,
         old_price:50.00,
     },
 ];
