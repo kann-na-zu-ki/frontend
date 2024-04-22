@@ -1,7 +1,8 @@
 import React, { useContext } from "react";
 import './ProductDisplay.css'
 import { ShopContext } from "../../Context/ShopContext";
- 
+import star_icon from '../Assets/star_icon.png'
+import star_dull_icon from '../Assets/star_dull_icon.png'
 
 const ProductDisplay = (props) =>{
     const {product} = props;
@@ -23,13 +24,14 @@ const ProductDisplay = (props) =>{
             <div className="productdisplay-right">
                 <h1>{product.name}</h1>
                 
-                {/*<div className="productdisplay-right-star">
-                    <img src="" alt="" />
-                    <img src="" alt="" />
-                    <img src="" alt="" />
-                    <img src="" alt="" />
-                    <img src="" alt="" />
-                    </div>*/}
+                <div className="productdisplay-right-stars">
+                    <img src={star_icon} alt="" />
+                    <img src={star_icon} alt="" />
+                    <img src={star_icon} alt="" />
+                    <img src={star_icon} alt="" />
+                    <img src={star_dull_icon} alt="" />
+                    <p>(111)</p>
+                    </div>
                 <div className="productdisplay-right-prices">
                     <div className="productdisplay-right-price-old">
                         ${product.old_price}
@@ -37,19 +39,13 @@ const ProductDisplay = (props) =>{
                     <div className="productdisplay-right-price-new">
                         ${product.new_price}
                     </div>
-
                 </div>
                 <div className="productdisplay-right-description">
-                    描述
+                    this is a dummy product
                 </div>
-                <div>
-                    <button onClick={()=>{addToCart(product.id)}}>ADD TO CART</button>
-                </div>
-                 
-
+                <button onClick={()=>{addToCart(product.id)}}>ADD TO CART</button>
 
             </div>
-
         </div>
     )
 }

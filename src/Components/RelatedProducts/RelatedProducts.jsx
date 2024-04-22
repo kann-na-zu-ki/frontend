@@ -2,6 +2,7 @@ import React from "react";
 import './RelatedProducts.css'
 import data_product from "../Assets/all_product";
 import Item from "../Item/Item";
+
 const RelatedProducts = () =>{
     return (
         <div className="relatedproducts">

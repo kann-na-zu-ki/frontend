@@ -1,10 +1,23 @@
 import React, { useContext } from "react";
 import './CartItems.css'
 import { ShopContext } from "../../Context/ShopContext";
-import remove_icon from '../Assets/cart-cross-icon.png';
-import add_icon from '../Assets/add-icon.png';
+// import remove_icon from '../Assets/remove_icon.png';
+// import add_icon from '../Assets/add_icon.png';
+import QuantityStepper from "../QuantityStepper/QuantityStepper";
+
 const CartItems =()=>{
     const {getTotalCartAmount, all_product, cartItems, removeFromCart,addToCart} = useContext(ShopContext)
+    // const handleChange = (e, productId) => {
+    //     const newValue = e.target.value;
+    //     if (newValue === '' || isNaN(newValue)) {
+    //         return;
+    //     }
+    //     const newQuantity = parseInt(newValue, 10);
+    //     if (newQuantity >= 0) {
+    //         updateCart(productId, newQuantity); 
+    //     }
+    // };
+
     return(
         <div className="cartitems">
             <div className="cartitems-format-main">
@@ -25,12 +38,17 @@ const CartItems =()=>{
                                     <p>{e.name}</p>
                                     <p>{e.new_price}</p>
                                     <div className="quantity-control">
-                                    <img className='cartitems-remove-icon' src={add_icon} onClick={()=>{addToCart(e.id)}} alt=""   />
+                                    {/* <img className='cartitems-modi-icon' src={add_icon} onClick={()=>{addToCart(e.id)}} alt=""   />
                                     <button className="cartitems-quantity">{cartItems[e.id]}</button>
-                                    <img className='cartitems-remove-icon' src={remove_icon} onClick={()=>{removeFromCart(e.id)}} alt=""   />
+                                    <input className="cartitems-quantity" type='text' min='1'  value={cartItems[e.id]} onChange={(event) => handleChange(event, e.id)} />
+                                    <img className='cartitems-modi-icon' src={remove_icon} onClick={()=>{removeFromCart(e.id)}} alt=""   /> */}
+                                        <QuantityStepper
+                                            quantity={cartItems[e.id]}
+                                            onIncrease={() => addToCart(e.id)}
+                                            onDecrease={() => removeFromCart(e.id)}
+                                        />
                                     </div>
                                     <p>${e.new_price*cartItems[e.id]}</p>
-                                     
                                 </div>
                                 <hr />
                             </div>
@@ -39,7 +57,7 @@ const CartItems =()=>{
             })}
             <div className="cartitems-down">
                 <div className="cartitems-total">
-                    <h1>cart Totals</h1>
+                    <h1>Cart Totals</h1>
                     <div>
                         <div className="cartitems-total-item">
                             <p>Subtatal</p>
@@ -49,7 +67,6 @@ const CartItems =()=>{
                         <div className="cartitems-total-item">
                             <p>Shipping Fee</p>
                             <p>Free</p>
-
                         </div>
                         <hr />
                         <div className="cartitems-total-item">
@@ -59,11 +76,14 @@ const CartItems =()=>{
                     </div>
                     <button className="proceed-button">PROCEED TO CHECKOUT</button>
                 </div>
-                
+                <div className="cartitems-promocode">
+                    <p>If you have a promo code, enter it here</p>
+                    <div className="cartitems-promobox">
+                        <input type="text" placeholder="promo code"/>
+                        <button>Submit</button>
+                    </div>
+                </div>
             </div>
-             
-
-
         </div>
     )
 }

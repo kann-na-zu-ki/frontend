@@ -8,36 +8,43 @@
 }
 .cartitems-format-main{
     display: grid;
-    grid-template-columns: 0.5fr 2fr 1fr 1fr 1fr 1fr;
-    align-items:flex-start;
+    grid-template-columns: 1fr 1fr 1fr 2fr 1fr;
+    align-items: center;
+    justify-content: center;
     gap: 75px;
     padding: 20px 0px;
     color: #454545;
     font-size: 18px;
     font-weight: 600;
 }
-.quantity-control {
-    display: flex; /* 使用flex布局 */
+.cartitems-format{
+    font-size: 20px;
+    font-weight: 500;
+    align-items: center;
+    justify-content: center;
+}
+.quantity-control{
+    margin-left: 9px;
+    display: flex; 
+    flex-direction: row;
     align-items: center;
 }
-.cartitems-format{
-    font-size: 17px;
-    font-weight: 500;
-}
 .carticon-product-icon{
-    height: 62px;
+    height: 100px;
 }
 
-.cartitems-remove-icon{
-    width: 15px;
-    margin: 0px 40px;
+.cartitems-modi-icon{
+    width: 20px;
+    margin: 0px 20px;
     cursor: pointer;
 }
 .cartitems-quantity{
-    width: 64px;
-    height: 50px;
+    align-items: center;
+    width: 62px;
+    height: 40px;
     border: 2px soild #ebebeb;
-    background: #fff;
+    border-radius: 7px;
+    background: white;
 }
 .cartitems-down{
     display: flex;
@@ -56,14 +63,45 @@
     padding: 15px 0px;
 }
 .proceed-button{
-     
     background-color: #5cb85c;
-    color: white;
+    color: #454545;
     border: none;
     padding: 15px 30px;
     cursor: pointer;
     font-size: 1em;
     border-radius: 4px;
     transition: background-color 0.3s;
-     
+}
+.cartitems-promocode{
+    flex: 1;
+    font-size: 16px;
+    font-weight: 500;
+}
+.cartitems-promocode p{
+    print-color-adjust: #555;
+}
+.cartitems-promobox{
+    width: 504px;
+    margin-top: 15px;
+    padding-left: 20px;
+    height: 58px;
+    background: #eaeaea;
+}
+.cartitems-promobox input{
+    border: none;
+    outline: none;
+    background: transparent;
+    font-size: 16px;
+    width: 330px;
+    height: 50px;
+}
+.cartitems-promobox button{
+    width: 170px;
+    height: 58px;
+    font-size: 16px;
+    background: #5cb85c;
+    color: #454545;
+    border-radius: 4px;
+    transition: background-color 0.3s;
+    cursor: pointer;
 }
